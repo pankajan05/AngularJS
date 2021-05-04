@@ -8,7 +8,27 @@
 </head>
 <body ng-app="Myapp">
     <div ng-controller="firstController">
-        {{name}}
+        {{name | uppercase}}
+
+        <br /><br />
+
+        <div>
+            <input type="text" placeholder="searchPerson" ng-model="search"/> {{search}}
+        </div> <br /><br />
+
+        <div>
+            <table style="border: 1px solid black">
+                <thead>
+                    <th>Name</th>
+                    <th>Age</th>
+                </thead>
+                <tr ng-repeat="person in array">
+                    <td>{{person.name}}</td>
+                    <td>{{person.age}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
+
 </body>
 </html>
