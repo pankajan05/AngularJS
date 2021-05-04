@@ -8,4 +8,8 @@ var myApp = angular.module('Myapp', [])
             { name: "ahsunaj", age: 24 },
             { name: "aknawiht", age: 25 },
             { name: "akidnar", age: 24 }];
+
+        $scope.searchthis = function(word){
+            console.log(word);
+        }
     });
