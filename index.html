@@ -8,28 +8,32 @@
     <script src="js/GenderFilter.js"></script>
 </head>
 <body ng-app="Myapp">
-    <div ng-controller="firstController">
+    <div ng-controller="firstController" ng-init="check=true">
         {{name | uppercase}}
 
         <br /><br />
 
         <div>
+            <label>hide</label><input type="checkbox" ng-model="check" /><br />
             <input type="text" placeholder="searchPerson" ng-model="searchText"/>
             <button ng-click="searchthis(searchText)">ClickMe</button>
+            
             {{searchText}}
         </div> <br /><br />
 
         <div>
             <table style="border: 1px solid black">
                 <thead>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Age</th>
-                    <th>Gender</th>
+                    <th ng-hide="check">Gender</th>
                 </thead>
                 <tr ng-repeat="person in array | orderBy:'name':true | filter:search">
+                    <td>{{$index}}</td>
                     <td>{{person.name }}</td>
                     <td>{{person.age | number: 2}}</td>
-                    <td>{{person.gender | gender}}</td>
+                    <td ng-hide="check">{{person.gender | gender}}</td>
                 </tr>
             </table>
         </div>
