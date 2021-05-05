@@ -1,7 +1,6 @@
 <div>
     <div ng-repeat="person in array | orderBy:'name':true | filter:search">
-        {{$index}}
-        <p>{{person.name }}</p>
+        {{$index}}.{{person.name }}
         <div>
             <ul>
                 <li>{{person.age | number: 2}}</li>
