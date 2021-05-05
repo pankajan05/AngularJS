@@ -23,8 +23,11 @@ var myApp = angular.module('Myapp', [])
             }
         }
     })
-    .directive('list', function () {
+    .directive('footer', function () {
         return {
-            templateUrl: 'myModalContent.html'
+            templateUrl: 'footer.html'
         };
     });
+
+/*$anchorScroll: scroll => $anchorScroll(),
+    $location: add location => $location.hash(name);*/
