@@ -22,4 +22,9 @@ var myApp = angular.module('Myapp', [])
                 return true;
             }
         }
+    })
+    .directive('list', function () {
+        return {
+            templateUrl: 'myModalContent.html'
+        };
     });
