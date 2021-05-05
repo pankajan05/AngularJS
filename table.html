@@ -1,0 +1,16 @@
+<div>
+    <table class="table table-striped">
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th ng-hide="check">Gender</th>
+        </thead>
+        <tr ng-repeat="person in array | orderBy:'name':true | filter:search">
+            <td>{{$index}}</td>
+            <td>{{person.name }}</td>
+            <td>{{person.age | number: 2}}</td>
+            <td ng-hide="check">{{person.gender | gender}}</td>
+        </tr>
+    </table>
+</div>
