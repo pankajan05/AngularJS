@@ -1,8 +1,12 @@
 <div>
     <ul ng-repeat="person in array | orderBy:'name':true | filter:search">
-        <li>{{$index}}</li>
+        {{$index}}
         <li>{{person.name }}</li>
-        <li>{{person.age | number: 2}}</li>
-        <li ng-hide="check">{{person.gender | gender}}</li>
+        <li>
+            <ul>
+                <li>{{person.age | number: 2}}</li>
+                <li ng-hide="check">{{person.gender | gender}}</li>
+            </ul>
+        </li>
     </ul>
 </div>
